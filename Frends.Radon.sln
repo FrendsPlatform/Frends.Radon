@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF51A6EA-2696-4107-93CE-A7C08E5CCCF6}"
+	ProjectSection(SolutionItems) = preProject
+		Radon.proj = Radon.proj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Radon.Tests", "Frends.Radon.Tests\Frends.Radon.Tests.csproj", "{D87E47BA-DDC7-4DAB-B996-205011ABE455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nDumbster", "Frends.Radon.Tests\nDumbster\nDumbster.csproj", "{C212524F-7E3A-4B15-9038-5B5A661FE913}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{8C247426-B2B7-4C43-9B2E-A4EC71FA7191}"
+	ProjectSection(SolutionItems) = preProject
+		.build\MSBuild.Community.Tasks.dll = .build\MSBuild.Community.Tasks.dll
+		.build\MSBuild.Community.Tasks.targets = .build\MSBuild.Community.Tasks.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Radon", "Frends.Radon\Frends.Radon.csproj", "{C2B433FA-F3C8-4B0F-92A5-9BD2A538B319}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D87E47BA-DDC7-4DAB-B996-205011ABE455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D87E47BA-DDC7-4DAB-B996-205011ABE455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D87E47BA-DDC7-4DAB-B996-205011ABE455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D87E47BA-DDC7-4DAB-B996-205011ABE455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C212524F-7E3A-4B15-9038-5B5A661FE913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C212524F-7E3A-4B15-9038-5B5A661FE913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C212524F-7E3A-4B15-9038-5B5A661FE913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C212524F-7E3A-4B15-9038-5B5A661FE913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2B433FA-F3C8-4B0F-92A5-9BD2A538B319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B433FA-F3C8-4B0F-92A5-9BD2A538B319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B433FA-F3C8-4B0F-92A5-9BD2A538B319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B433FA-F3C8-4B0F-92A5-9BD2A538B319}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
