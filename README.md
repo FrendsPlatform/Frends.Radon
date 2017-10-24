@@ -7,14 +7,8 @@
         - [Email templates](#email-templates)
         - [External events](#external-events)
     - [Parameter reference](#parameter-reference)
-        - [Frends.Radon.Execute](#frends.radon.execute)
-            - [Email](#email)
-            - [Filter](#email)
-        - [Frends.Radon.SendMail](#frends.radon.sendmail)
-            - [Email](#email)
-    - [Known issues](#known-issues)
-
-        
+        - [Frends.Radon.Execute](#frendsradonexecute)
+        - [Frends.Radon.SendMail](#frendsradonsendmail)        
 
 # Frends Radon
 
@@ -177,7 +171,7 @@ When using external events, FRENDS Radon does not enforce the time limit 'maxTim
 
 The main Radon task
 
-#### Email
+Email:
 
 | Property                | Type   | Description                                                                                 |
 | ----------------------- | ------ | ------------------------------------------------------------------------------------------- |
@@ -194,7 +188,7 @@ The main Radon task
 | Template file           | string | The path to the file which contains the Liquid template to use. The default template will be used if left empty. See [Template](#template) for the template format                                        |
 | Use ssl                 | string | Should the connection to the SMTP server use SSL                                            |
 
-#### Filter
+Filter:
 
 | Property            | Type     | Description                                                                                                                     |
 | ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -210,7 +204,7 @@ The main Radon task
 
 The FRENDS Radon mailing functionality is provided as the Task 'FRENDS Radon SendMail', which can be used to send arbitrary email messages. The Mailer task uses the same email settings as the FRENDS Radon except it does not support the email templates. Instead of the template, it has the 'MessageContent' property which can be used to set the email message body.
 
-#### Email
+Email:
 
 | Property                | Type   | Description                                                                                 |
 | ----------------------- | ------ | ------------------------------------------------------------------------------------------- |
@@ -226,5 +220,3 @@ The FRENDS Radon mailing functionality is provided as the Task 'FRENDS Radon Sen
 | Max idle time           | int    | Sets up a time (in milliseconds), enclosed in value-tags, how long connection can remain idle before it is closed                                                             |
 | Use ssl                 | string | Should the connection to the SMTP server use SSL                                            |
 | Message Content         | string | The content of email message                                                |
-
-# Known issues
