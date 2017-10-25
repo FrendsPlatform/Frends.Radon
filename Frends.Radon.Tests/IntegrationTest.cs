@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using nDumbster.smtp;
+using nDumbster.Smtp;
 using NUnit.Framework;
 using Rhino.Mocks;
 

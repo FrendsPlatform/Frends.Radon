@@ -2,7 +2,7 @@
 using System.Linq;
 using NUnit.Framework;
 using System.Net.Mail;
-using nDumbster.smtp;
+using nDumbster.Smtp;
 
 namespace Frends.Radon.Tests
 {
@@ -39,7 +39,7 @@ namespace Frends.Radon.Tests
             client.SendReport(msgBody, msgSubject);
 
             Assert.AreEqual(1, smtpServer.ReceivedEmailCount, "1 mails sent");
-            SmtpMessage mail = smtpServer.ReceivedEmail[0];
+            var mail = smtpServer.ReceivedEmail.First();
             Assert.AreEqual("jouko.rules@totally.com", mail.Headers["To"], "Receiver");
             Assert.AreEqual("\"Dr Evil\" <dr.evil@evilcorp.com>", mail.Headers["From"], "Sender");
             Assert.AreEqual(msgSubject, mail.Headers["Subject"], "Subject");

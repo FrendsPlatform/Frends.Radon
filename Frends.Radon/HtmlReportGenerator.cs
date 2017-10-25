@@ -7,7 +7,7 @@ using DotLiquid;
 using Frends.Radon.LiquidExtensions;
 using Frends.Radon.TemplateDrops;
 
-[assembly: InternalsVisibleTo("Frends.Radon.Tests, PublicKey=002400000480000094000000060200000024000052534131000400000100010071d46d94bfbc9e3546f5c818aabd7f2b0f166c7468ebda1329c08f5b8bdcd38852acb87a46898ae6e03c6095622392fca701b24e9577782a406739fdff9d50bcc09e2e0144e2a83ec7c7f938f6933f0db576feeb21601efc012510d817c3fa386f290ee724b809db439ad042cfa2af123afdd4f560776511c32f605b34aa62c7")]
+[assembly: InternalsVisibleTo("Frends.Radon.Tests")]
 namespace Frends.Radon
 {
     public interface IHtmlReportGenerator

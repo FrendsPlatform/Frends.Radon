@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using nDumbster.smtp;
+using nDumbster.Smtp;
 using NUnit.Framework;
 
 namespace Frends.Radon.Tests
