@@ -1,0 +1,10 @@
+_ReSharper.*
+bin
+obj
+output
+*.suo
+*resharper*
+*.user
+*.cache
+packages
+GlobalAssemblyInfo.cs

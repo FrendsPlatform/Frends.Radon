@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Frends.Radon</id>
+    <version>3.0</version>
+    <title>FRENDS Radon</title>
+    <authors>HiQ Finland</authors>
+    <owners />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>FRENDS Radon</description>
+    <projectUrl>https://teams.hiq.fi/confluence/display/RnD/FRENDS+Radon+2.0</projectUrl>
+    <summary />
+    <dependencies>
+      <dependency id="DotLiquid" version="1.7.0" />
+      <dependency id="DynamicQuery" version="1.0" />
+      <!--This is not mandatory, but including it for completeness sake:-->
+      <dependency id="Frends.Tasks.Attributes" version="1.0.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Output\Frends.Radon.dll" target="lib\net40" />
+    <file src="Output\FrendsTaskMetadata.json" target="tools\" />
+  </files>
+</package>

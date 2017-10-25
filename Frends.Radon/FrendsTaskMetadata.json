@@ -1,0 +1,10 @@
+{
+	"Tasks": [
+		{
+			"TaskMethod": "Frends.Radon.Reporter.Execute"
+		},
+		{
+			"TaskMethod": "Frends.Radon.Mailer.SendMail"
+		}
+	]
+}

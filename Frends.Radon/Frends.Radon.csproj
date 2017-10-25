@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2B433FA-F3C8-4B0F-92A5-9BD2A538B319}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Frends.Radon</RootNamespace>
+    <AssemblyName>Frends.Radon</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Radon.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotLiquid, Version=1.7.0.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotLiquid.1.7.0\lib\NET40\DotLiquid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dynamic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=68293a411f0cabcc, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicQuery.1.0\lib\35\Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Frends.Tasks.Attributes, Version=1.2.0.0, Culture=neutral, PublicKeyToken=258fd606323928fc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Frends.Tasks.Attributes.1.2.0\lib\net40\Frends.Tasks.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AlreadyReportedFilter.cs" />
+    <Compile Include="EmailConfiguration.cs" />
+    <Compile Include="EventIdentification.cs" />
+    <Compile Include="EventIdentificationStore.cs" />
+    <Compile Include="EventLogFactory.cs" />
+    <Compile Include="EventReader.cs" />
+    <Compile Include="ExternalEventsReader.cs" />
+    <Compile Include="FilterConfiguration.cs" />
+    <Compile Include="HashBuilder.cs" />
+    <Compile Include="HtmlReportGenerator.cs" />
+    <Compile Include="IFilterItem.cs" />
+    <Compile Include="IRadonConfigurationManager.cs" />
+    <Compile Include="IReportSender.cs" />
+    <Compile Include="LiquidExtensions\FilterExtensions.cs" />
+    <Compile Include="LogEvent.cs" />
+    <Compile Include="LogEventFilter.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="RadonConfigurationManager.cs" />
+    <Compile Include="Mailer.cs" />
+    <Compile Include="RadonExecutor.cs" />
+    <Compile Include="RadonProgram.cs" />
+    <Compile Include="RadonResult.cs" />
+    <Compile Include="Reporter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmtpSender.cs" />
+    <Compile Include="TemplateDrops\FilterConfigurationDrop.cs" />
+    <Compile Include="TemplateDrops\LogEventDrop.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DotLiquidLicense.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Dynamic Expressions.html" />
+    <Content Include="FrendsTaskMetadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
