@@ -8,10 +8,10 @@ namespace Frends.Radon
         [DefaultValue("\"Frends Radon\"")]
         public string SenderName { get; set; }
 
-        [DefaultValue("\"notification_noreply@somedomain.com\"")]
+        [DefaultValue("\"notification_noreply@example.com\"")]
         public string SenderAddress { get; set; }
 
-        [DefaultValue("\"john.doe@somedomain.com; jane.doe@somedomain.com\"")]
+        [DefaultValue("\"john.doe@example.com; jane.doe@example.com\"")]
         public string Recipients { get; set; }
 
         [DefaultValue("\"System event report\"")]

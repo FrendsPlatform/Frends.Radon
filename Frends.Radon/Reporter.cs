@@ -13,10 +13,10 @@ namespace Frends.Radon
         [DefaultValue("\"Frends Radon\"")]
         public string SenderName { get; set; }
 
-        [DefaultValue("\"notification_noreply@somedomain.com\"")]
+        [DefaultValue("\"notification_noreply@example.org\"")]
         public string SenderAddress { get; set; }
 
-        [DefaultValue("\"john.doe@somedomain.com; jane.doe@somedomain.com\"")]
+        [DefaultValue("\"john.doe@example.org; jane.doe@example.org\"")]
         public string Recipients { get; set; }
 
         [DefaultValue("\"smtp.somedomain.com\"")]
@@ -37,7 +37,7 @@ namespace Frends.Radon
 
         [DefaultValue("\"\"")]
         [ConditionalDisplay(nameof(UseWindowsCredentials), "false")]
-
+        [PasswordPropertyText]
         public string Password { get; set; }
 
         [DefaultValue(1000)]
