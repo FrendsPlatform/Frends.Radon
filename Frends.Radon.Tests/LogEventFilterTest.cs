@@ -38,8 +38,8 @@ namespace Frends.Radon.Tests
                 }
                 catch (ArgumentException ae)
                 {
-                    Assert.That(ae.Message, Is.StringContaining("UnknownProperty = 10"));
-                    Assert.That(ae.ToString(), Is.StringContaining("UnknownProperty") & Is.StringContaining("at index 0"));
+                    Assert.That(ae.Message, Does.Contain("UnknownProperty = 10"));
+                    Assert.That(ae.ToString(), Does.Contain("UnknownProperty") & Does.Contain("at index 0"));
                 }
             }
 
@@ -55,8 +55,8 @@ namespace Frends.Radon.Tests
                 }
                 catch (ArgumentException ae)
                 {
-                    Assert.That(ae.Message, Is.StringContaining(filterString));
-                    Assert.That(ae.ToString(), Is.StringContaining("at index 0"));
+                    Assert.That(ae.Message, Does.Contain(filterString));
+                    Assert.That(ae.ToString(), Does.Contain("at index 0"));
                 }
             }
         }

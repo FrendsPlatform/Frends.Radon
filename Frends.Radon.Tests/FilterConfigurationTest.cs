@@ -12,7 +12,7 @@ namespace Frends.Radon.Tests
         private string _remoteMachine;
         private string _eventLogName;
         
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void TestFixtureSetUp()
         {
             _filterString = "MyFilterString";

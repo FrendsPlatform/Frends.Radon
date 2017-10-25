@@ -13,7 +13,7 @@ namespace Frends.Radon.Tests
         private IEventReader _mockEventReader;
         private IRadonExecutor _radonExecutor;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void TestFixtureSetUp()
         {
             _mockReportSender = MockRepository.GenerateMock<IReportSender>();

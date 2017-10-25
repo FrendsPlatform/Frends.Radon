@@ -34,7 +34,7 @@ namespace Frends.Radon.Tests
             _filterConfig = new FilterConfiguration("foo", TimeSpan.FromHours(1), 100, "foobar", "baz");
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public void TearDown()
         {
             EventIdentificationStore.ClearStoreFiles();

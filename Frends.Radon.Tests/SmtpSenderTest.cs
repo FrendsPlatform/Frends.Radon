@@ -45,7 +45,7 @@ namespace Frends.Radon.Tests
             Assert.AreEqual(msgSubject, mail.Headers["Subject"], "Subject");
 
             var body = ParseMessageBody(mail.Body);
-            Assert.That(body, Is.StringContaining(msgBody));
+            Assert.That(body, Does.Contain(msgBody));
         }
 
         [Test]
@@ -70,7 +70,7 @@ namespace Frends.Radon.Tests
             Assert.That(smtpServer.ReceivedEmailCount, Is.EqualTo(1));
 
             var body = ParseMessageBody(smtpServer.ReceivedEmail.Single().Body);
-            Assert.That(body, Is.StringContaining("<Perfect/>"));            
+            Assert.That(body, Does.Contain("<Perfect/>"));            
         }
 
         public static string ParseMessageBody(string body)

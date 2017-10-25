@@ -20,7 +20,7 @@ namespace Frends.Radon.Tests
         private string _password;
         private string _templateFile;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void TestFixtureSetup()
         {
             _smtpServerName = "smtpServerName";
@@ -217,7 +217,7 @@ namespace Frends.Radon.Tests
                 templateFile: _templateFile);
 
             var exception = Assert.Throws<ArgumentException>(() => emailConfiguration.GetReportSender());
-            Assert.That(exception.Message, Is.StringContaining("Smtp server"));
+            Assert.That(exception.Message, Does.Contain("Smtp server"));
         }
 
         [Test]
@@ -236,7 +236,7 @@ namespace Frends.Radon.Tests
                 templateFile: _templateFile);
 
             var exception = Assert.Throws<ArgumentException>(() => emailConfiguration.GetReportSender());
-            Assert.That(exception.Message, Is.StringContaining("A recipient"));
+            Assert.That(exception.Message, Does.Contain("A recipient"));
         }
 
         [TestCase(null)]
@@ -256,7 +256,7 @@ namespace Frends.Radon.Tests
                 templateFile: _templateFile);
 
             var exception = Assert.Throws<ArgumentException>(() => emailConfiguration.GetReportSender());
-            Assert.That(exception.Message, Is.StringContaining("Sender address"));
+            Assert.That(exception.Message, Does.Contain("Sender address"));
         }
 
         [Test]
@@ -285,7 +285,7 @@ namespace Frends.Radon.Tests
 
             var e = Assert.Throws<ArgumentException>(() => emailConfig.GetReportSender());
 
-            Assert.That(e.Message, Is.StringContaining("password").IgnoreCase);
+            Assert.That(e.Message, Does.Contain("password").IgnoreCase);
         }
 
         [Test]

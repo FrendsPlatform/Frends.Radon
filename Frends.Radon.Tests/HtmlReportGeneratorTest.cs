@@ -16,7 +16,7 @@ namespace Frends.Radon.Tests
         private FilterConfiguration _filterConfig;
         private EmailConfiguration _emailConfig;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void TestFixtureSetup()
         {
              _events = new List<LogEvent>
@@ -67,10 +67,10 @@ namespace Frends.Radon.Tests
 
             string result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining("inside"));
-            Assert.That(result, Is.StringContaining("inside2"));
-            Assert.That(result, Is.StringContaining("<table"));
-            Assert.That(result, Is.StringContaining("</table>"));
+            Assert.That(result, Does.Contain("inside"));
+            Assert.That(result, Does.Contain("inside2"));
+            Assert.That(result, Does.Contain("<table"));
+            Assert.That(result, Does.Contain("</table>"));
         }
 
         [Test]
@@ -80,7 +80,7 @@ namespace Frends.Radon.Tests
 
             string result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining("Application")); //Application is the default log
+            Assert.That(result, Does.Contain("Application")); //Application is the default log
         }
 
         [Test]
@@ -90,7 +90,7 @@ namespace Frends.Radon.Tests
 
             string result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining("Security"));
+            Assert.That(result, Does.Contain("Security"));
         }
 
         [Test]
@@ -100,7 +100,7 @@ namespace Frends.Radon.Tests
 
             string result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining("testRemoteMachineName"));
+            Assert.That(result, Does.Contain("testRemoteMachineName"));
         }
 
         [Test]
@@ -110,7 +110,7 @@ namespace Frends.Radon.Tests
 
             string result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining(Environment.MachineName));
+            Assert.That(result, Does.Contain(Environment.MachineName));
         }
         [Test]
         public void ShouldHaveHeader()
@@ -119,9 +119,9 @@ namespace Frends.Radon.Tests
 
             string result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining("events from the Application log from"));
-            Assert.That(result, Is.StringContaining(DateTime.Now.Date.ToShortDateString()));
-            Assert.That(result, Is.StringContaining(DateTime.Now.AddDays(-1).Date.ToShortDateString()));
+            Assert.That(result, Does.Contain("events from the Application log from"));
+            Assert.That(result, Does.Contain(DateTime.Now.Date.ToShortDateString()));
+            Assert.That(result, Does.Contain(DateTime.Now.AddDays(-1).Date.ToShortDateString()));
         }
 
         [Test]
@@ -131,7 +131,7 @@ namespace Frends.Radon.Tests
 
             string result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining("testFilterString"));
+            Assert.That(result, Does.Contain("testFilterString"));
         }
 
         [Test]
@@ -140,8 +140,8 @@ namespace Frends.Radon.Tests
             DateTime expectedDateTime = DateTime.Now;
             var context = HtmlReportGenerator.CreateContextHash(_filterConfig, new LogEventDrop[]{});
 
-            Assert.That(context["start_time"], Is.StringContaining(expectedDateTime.AddDays(-1).ToString("g")), "The header should contain the end time (the current time) in short date time format");
-            Assert.That(context["current_time"], Is.StringContaining(expectedDateTime.ToString("g")), "The header should contain the end time (the current time) in short date time format");
+            Assert.That(context["start_time"], Does.Contain(expectedDateTime.AddDays(-1).ToString("g")), "The header should contain the end time (the current time) in short date time format");
+            Assert.That(context["current_time"], Does.Contain(expectedDateTime.ToString("g")), "The header should contain the end time (the current time) in short date time format");
         }
 
         [TestCase(null, "Application")]
@@ -176,7 +176,7 @@ namespace Frends.Radon.Tests
 
             var result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining(_filterConfig.MaxMessages -1 + " previously unreported events"));
+            Assert.That(result, Does.Contain(_filterConfig.MaxMessages -1 + " previously unreported events"));
         }
 
         [Test]
@@ -188,7 +188,7 @@ namespace Frends.Radon.Tests
 
             var result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining(_filterConfig.MaxMessages+" latest previously unreported events"));
+            Assert.That(result, Does.Contain(_filterConfig.MaxMessages+" latest previously unreported events"));
         }
 
         [Test]
@@ -198,7 +198,7 @@ namespace Frends.Radon.Tests
 
             var result = target.CreateHtmlReport();
 
-            Assert.That(result, Is.StringContaining("0 previously unreported events"));
+            Assert.That(result, Does.Contain("0 previously unreported events"));
         }
     }
 }

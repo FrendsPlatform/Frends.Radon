@@ -55,7 +55,7 @@ namespace Frends.Radon.Tests
             Assert.That(smtpServer.ReceivedEmailCount, Is.EqualTo(1));
             var body = SmtpSenderTest.ParseMessageBody(smtpServer.ReceivedEmail.Single().Body);
 
-            Assert.That(body, Is.StringContaining(eventName));
+            Assert.That(body, Does.Contain(eventName));
             smtpServer.ClearReceivedEmail();
         }
 
@@ -113,7 +113,7 @@ namespace Frends.Radon.Tests
             var filterString = "EmtryType = \"Epror\"";
             var ex = Assert.Throws(typeof(ArgumentException), () => RunWorkflow(GetEmailSettings(), GetFilterSettings(filterString)));
 
-            Assert.That(ex.Message, Is.StringContaining(filterString));
+            Assert.That(ex.Message, Does.Contain(filterString));
             smtpServer.ClearReceivedEmail();
         }
 
@@ -123,7 +123,7 @@ namespace Frends.Radon.Tests
             string logName = "Apppppppplication";
             var ex = Assert.Throws(typeof(ArgumentException), () => RunWorkflow(GetEmailSettings(), GetFilterSettings("", "", logName)));
 
-            Assert.That(ex.Message, Is.StringContaining(logName));
+            Assert.That(ex.Message, Does.Contain(logName));
             smtpServer.ClearReceivedEmail();
         }
 
@@ -134,7 +134,7 @@ namespace Frends.Radon.Tests
             var ex = Assert.Throws(typeof(ArgumentException), () => RunWorkflow(GetEmailSettings(), GetFilterSettings("", machine, "")));
 
             smtpServer.ClearReceivedEmail();
-            Assert.That(ex.Message, Is.StringContaining(machine));
+            Assert.That(ex.Message, Does.Contain(machine));
             smtpServer.ClearReceivedEmail();
         }
 
@@ -150,7 +150,7 @@ namespace Frends.Radon.Tests
             Assert.That(smtpServer.ReceivedEmailCount, Is.EqualTo(1));
 
             var body = SmtpSenderTest.ParseMessageBody(smtpServer.ReceivedEmail.Single().Body);
-            Assert.That(body, Is.StringContaining(eventName));
+            Assert.That(body, Does.Contain(eventName));
             smtpServer.ClearReceivedEmail();
         }
 
@@ -169,7 +169,7 @@ namespace Frends.Radon.Tests
             Assert.That(smtpServer.ReceivedEmailCount, Is.EqualTo(1));
 
             var body = SmtpSenderTest.ParseMessageBody(smtpServer.ReceivedEmail.Single().Body);
-            Assert.That(body, Is.StringContaining(eventName));
+            Assert.That(body, Does.Contain(eventName));
             smtpServer.ClearReceivedEmail();
         }
 
@@ -188,7 +188,7 @@ namespace Frends.Radon.Tests
             Assert.That(smtpServer.ReceivedEmailCount, Is.EqualTo(1));
 
             var body = SmtpSenderTest.ParseMessageBody(smtpServer.ReceivedEmail.Single().Body);
-            Assert.That(body, Is.StringContaining(eventName));
+            Assert.That(body, Does.Contain(eventName));
             smtpServer.ClearReceivedEmail();
         }
 
@@ -247,7 +247,7 @@ namespace Frends.Radon.Tests
             Assert.That(smtpServer.ReceivedEmailCount, Is.EqualTo(1));
 
             var body = SmtpSenderTest.ParseMessageBody(smtpServer.ReceivedEmail.Single().Body);
-            Assert.That(body, Is.StringContaining(eventName));
+            Assert.That(body, Does.Contain(eventName));
             smtpServer.ClearReceivedEmail();
         }
 
@@ -263,7 +263,7 @@ namespace Frends.Radon.Tests
             Assert.That(smtpServer.ReceivedEmailCount, Is.EqualTo(1));
 
             var body = SmtpSenderTest.ParseMessageBody(smtpServer.ReceivedEmail.Single().Body);
-            Assert.That(body, Is.StringContaining(eventName));
+            Assert.That(body, Does.Contain(eventName));
             smtpServer.ClearReceivedEmail();
         }
 

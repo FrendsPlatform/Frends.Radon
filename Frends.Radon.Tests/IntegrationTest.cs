@@ -25,7 +25,7 @@ namespace Frends.Radon.Tests
 
         private IRadonExecutor _radonExecutor;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void TestFixtureSetUp()
         {
             _mockEventIdentificationStore = MockRepository.GenerateMock<IEventIdentificationStore>();
@@ -64,7 +64,7 @@ namespace Frends.Radon.Tests
 
             var body = SmtpSenderTest.ParseMessageBody(_smtpServer.ReceivedEmail.Single().Body);
 
-            Assert.That(body, Is.StringContaining("logon"));
+            Assert.That(body, Does.Contain("logon"));
         }
 
         [Test]
@@ -76,7 +76,7 @@ namespace Frends.Radon.Tests
 
             var body = SmtpSenderTest.ParseMessageBody(_smtpServer.ReceivedEmail.Single().Body);
 
-            Assert.That(body, Is.StringContaining("logon"));
+            Assert.That(body, Does.Contain("logon"));
         }
 
         [Test]
@@ -94,7 +94,7 @@ namespace Frends.Radon.Tests
 
             var body = SmtpSenderTest.ParseMessageBody(_smtpServer.ReceivedEmail.Single().Body);
 
-            Assert.That(body, Is.StringContaining("External event message"));
+            Assert.That(body, Does.Contain("External event message"));
         }
 
         private void SendReportUsingFilter(string filterString, EventSource source = EventSource.EventLog, string externalEvents = "")

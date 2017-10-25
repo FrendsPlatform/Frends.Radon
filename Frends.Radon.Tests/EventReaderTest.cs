@@ -12,7 +12,7 @@ namespace Frends.Radon.Tests
     {
         private EventLog _testEventLog;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void TestFixtureSetUp()
         {
             if (!EventLog.SourceExists("RadonTestEventSource"))
@@ -75,7 +75,7 @@ namespace Frends.Radon.Tests
 
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public void TestFixtureTearDown()
         {
             EventLog.DeleteEventSource("RadonTestEventSource");
