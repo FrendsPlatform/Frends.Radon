@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Dynamic;
 
@@ -50,11 +51,11 @@ namespace Frends.Radon
             var count = result.Count();
             if (count > 0)
             {
-                Console.WriteLine("Events found: " + count);
+                Trace.WriteLine("Events found: " + count);
             }
             else
             {
-                Console.WriteLine("No events were found for FRENDS Radon report.");
+                Trace.WriteLine("No events were found for FRENDS Radon report.");
             }
             return result;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Mail;
 
 namespace Frends.Radon
@@ -41,15 +42,15 @@ namespace Frends.Radon
                     mailMessage.To.Add(receiver.Address);
                 }
 
-                Console.WriteLine("Sending mail from FRENDS Radon to " + mailMessage.To);
+                Trace.WriteLine("Sending mail from FRENDS Radon to " + mailMessage.To);
                 try
                 {
                     SmtpClient.Send(mailMessage);
-                    Console.WriteLine("Mail has been sent from FRENDS Radon.");
+                    Trace.WriteLine("Mail has been sent from FRENDS Radon.");
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error while sending mail from FRENDS Radon: " + e);
+                    Trace.WriteLine("Error while sending mail from FRENDS Radon: " + e);
                     throw new Exception("Error while sending mail from FRENDS Radon: " + e.Message, e);
                 }
             }
