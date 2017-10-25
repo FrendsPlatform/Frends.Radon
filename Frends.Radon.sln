@@ -18,6 +18,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{8C2474
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Radon", "Frends.Radon\Frends.Radon.csproj", "{C2B433FA-F3C8-4B0F-92A5-9BD2A538B319}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{BB0DB5E2-B223-4737-AEE1-803FF5D1F35F}"
+	ProjectSection(SolutionItems) = preProject
+		nuspec\Frends.Radon.nuspec = nuspec\Frends.Radon.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

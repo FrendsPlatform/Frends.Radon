@@ -12,6 +12,7 @@
     <summary />
     <dependencies>
       <dependency id="DotLiquid" version="1.7.0" />
+      <dependency id="DynamicQuery" version="1.0" />
       <!--This is not mandatory, but including it for completeness sake:-->
       <dependency id="Frends.Tasks.Attributes" version="1.0.0.0" />
     </dependencies>
