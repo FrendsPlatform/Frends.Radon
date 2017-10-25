@@ -41,6 +41,9 @@
       <HintPath>..\packages\DotLiquid.1.7.0\lib\NET40\DotLiquid.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Dynamic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=68293a411f0cabcc, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicQuery.1.0\lib\35\Dynamic.dll</HintPath>
+    </Reference>
     <Reference Include="Frends.Tasks.Attributes, Version=1.2.0.0, Culture=neutral, PublicKeyToken=258fd606323928fc, processorArchitecture=MSIL">
       <HintPath>..\packages\Frends.Tasks.Attributes.1.2.0\lib\net40\Frends.Tasks.Attributes.dll</HintPath>
     </Reference>
@@ -66,7 +69,6 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AlreadyReportedFilter.cs" />
-    <Compile Include="DynamicQuery.cs" />
     <Compile Include="EmailConfiguration.cs" />
     <Compile Include="EventIdentification.cs" />
     <Compile Include="EventIdentificationStore.cs" />
@@ -99,6 +101,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <Content Include="Dynamic Expressions.html" />
     <Content Include="FrendsTaskMetadata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
