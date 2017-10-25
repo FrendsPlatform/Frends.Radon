@@ -5,25 +5,31 @@ namespace Frends.Radon
 {
     public class MailerSettings
     {
-        [DefaultValue("\"Frends Radon\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("Frends Radon")]
         public string SenderName { get; set; }
 
-        [DefaultValue("\"notification_noreply@example.com\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("notification_noreply@example.org")]
         public string SenderAddress { get; set; }
 
-        [DefaultValue("\"john.doe@example.com; jane.doe@example.com\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("john.doe@example.org; jane.doe@example.org")]
         public string Recipients { get; set; }
 
-        [DefaultValue("\"System event report\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("System event report")]
         public string Subject { get; set; }
 
-        [DefaultValue("\"You've got mail!\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("You've got mail!")]
         public string MessageContent { get; set; }
 
-        [DefaultValue("\"smtp.somedomain.com\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("smtp.somedomain.com")]
         public string SmtpServerName { get; set; }
 
-        [DefaultValue("25")]
+        [DefaultValue(25)]
         public int PortNumber { get; set; }
 
         [DefaultValue("false")]
@@ -33,17 +39,21 @@ namespace Frends.Radon
         public bool UseWindowsCredentials { get; set; }
 
         [ConditionalDisplay(nameof(UseWindowsCredentials), "false")]
-        [DefaultValue("\"\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("")]
         public string Username { get; set; }
 
+        [PasswordPropertyText]
+        [DefaultDisplayType(DisplayType.Text)]
         [ConditionalDisplay(nameof(UseWindowsCredentials), "false")]
-        [DefaultValue("\"\"")]
+        [DefaultValue("")]
         public string Password { get; set; }
 
         [DefaultValue(1000)]
         public int MaxIdleTime { get; set; }
 
-        [DefaultValue("\"\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("")]
         public string TemplateFile { get; set; }
     }
     public class Mailer

@@ -7,22 +7,27 @@ namespace Frends.Radon
 {
     public class EmailSettings
     {
-        [DefaultValue("\"System event report\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("System event report")]
         public string Subject { get; set; }
 
-        [DefaultValue("\"Frends Radon\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("Frends Radon")]
         public string SenderName { get; set; }
 
-        [DefaultValue("\"notification_noreply@example.org\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("notification_noreply@example.org")]
         public string SenderAddress { get; set; }
 
-        [DefaultValue("\"john.doe@example.org; jane.doe@example.org\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("john.doe@example.org; jane.doe@example.org")]
         public string Recipients { get; set; }
 
-        [DefaultValue("\"smtp.somedomain.com\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("smtp.somedomain.com")]
         public string SmtpServerName { get; set; }
 
-        [DefaultValue("25")]
+        [DefaultValue(25)]
         public int PortNumber { get; set; }
 
         [DefaultValue("false")]
@@ -31,43 +36,51 @@ namespace Frends.Radon
         [DefaultValue("true")]
         public bool UseWindowsCredentials { get; set; }
 
-        [DefaultValue("\"\"")]
-        [ConditionalDisplay(nameof(UseWindowsCredentials), "false")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("")]
+        [ConditionalDisplay(nameof(UseWindowsCredentials), false)]
         public string Username { get; set; }
 
-        [DefaultValue("\"\"")]
-        [ConditionalDisplay(nameof(UseWindowsCredentials), "false")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("")]
+        [ConditionalDisplay(nameof(UseWindowsCredentials), false)]
         [PasswordPropertyText]
         public string Password { get; set; }
 
         [DefaultValue(1000)]
         public int MaxIdleTime { get; set; }
 
-        [DefaultValue("\"\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("")]
         public string TemplateFile { get; set; }
     }
 
     public class FilterSettings
     {
-        [DefaultValue("\"EntryType = \\\"Error\\\"\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("EntryType = \"Error\"")]
         public string FilterString { get; set; }
 
+        [DefaultDisplayType(DisplayType.Expression)]
         [DefaultValue("TimeSpan.FromDays(1)")]
         public TimeSpan MaxTimespan { get; set; }
 
         [DefaultValue(EventSource.EventLog)]
         public EventSource EventSource { get; set; }
 
-        [DefaultValue("\"\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("")]
         public string ExternalEventsXml { get; set; }
 
         [DefaultValue(200)]
         public int MaxMessages { get; set; }
 
-        [DefaultValue("\"\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("")]
         public string RemoteMachine { get; set; }
 
-        [DefaultValue("\"\"")]
+        [DefaultDisplayType(DisplayType.Text)]
+        [DefaultValue("")]
         public string EventLogName { get; set; }
     }
 
