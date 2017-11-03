@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
@@ -161,9 +162,10 @@ namespace Frends.Radon.Tests
         public void CanReadRemoteEventLog()
         {
             const string eventName = "TestEvent CanReadRemoteEventLog";
-            WriteToLogWithCustomLog("Application", "testSource", eventName, "FRBLD01");
+            var remoteMachine = ConfigurationManager.AppSettings["RemoteMachineName"];
+            WriteToLogWithCustomLog("Application", "testSource", eventName, remoteMachine);
 
-            var outParams = RunWorkflow(GetEmailSettings(), GetFilterSettings("EntryType = \"Error\" And EventID = 666", "FRBLD01", ""));
+            var outParams = RunWorkflow(GetEmailSettings(), GetFilterSettings("EntryType = \"Error\" And EventID = 666", remoteMachine, ""));
 
             Assert.That(outParams.UserResultMessage, Iz.EqualTo("Mail sent to bar@foo.com"));
             Assert.That(smtpServer.ReceivedEmailCount, Is.EqualTo(1));
