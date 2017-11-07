@@ -23,7 +23,15 @@ You can install the Task via FRENDS UI Task view or you can find the NuGet packa
 
 ## Building
 
-Source code is not yet available, but we hope to add it soon
+Clone a copy of the repo
+
+`git clone https://github.com/FrendsPlatform/Frends.Radon.git`
+
+Restore dependencies
+
+`nuget restore frends.radon`
+
+Rebuild the project
 
 ## Contributing
 
