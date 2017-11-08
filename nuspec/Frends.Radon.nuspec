@@ -16,7 +16,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="Output\Frends.Radon.dll" target="lib\net40" />
-    <file src="Output\FrendsTaskMetadata.json" target="tools\" />
+    <file src="Frends.Radon\bin\Release\Frends.Radon.dll" target="lib\net40" />
+    <file src="Frends.Radon\bin\Release\FrendsTaskMetadata.json" target="tools\" />
   </files>
 </package>
