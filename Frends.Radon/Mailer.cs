@@ -1,31 +1,31 @@
 ﻿using System.ComponentModel;
-using Frends.Tasks.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace Frends.Radon
 {
     public class MailerSettings
     {
-        [DefaultDisplayType(DisplayType.Text)]
+        [DisplayFormat(DataFormatString = "Text")]
         [DefaultValue("Frends Radon")]
         public string SenderName { get; set; }
 
-        [DefaultDisplayType(DisplayType.Text)]
+        [DisplayFormat(DataFormatString = "Text")]
         [DefaultValue("notification_noreply@example.org")]
         public string SenderAddress { get; set; }
 
-        [DefaultDisplayType(DisplayType.Text)]
+        [DisplayFormat(DataFormatString = "Text")]
         [DefaultValue("john.doe@example.org; jane.doe@example.org")]
         public string Recipients { get; set; }
 
-        [DefaultDisplayType(DisplayType.Text)]
+        [DisplayFormat(DataFormatString = "Text")]
         [DefaultValue("System event report")]
         public string Subject { get; set; }
 
-        [DefaultDisplayType(DisplayType.Text)]
+        [DisplayFormat(DataFormatString = "Text")]
         [DefaultValue("You've got mail!")]
         public string MessageContent { get; set; }
 
-        [DefaultDisplayType(DisplayType.Text)]
+        [DisplayFormat(DataFormatString = "Text")]
         [DefaultValue("smtp.somedomain.com")]
         public string SmtpServerName { get; set; }
 
@@ -38,21 +38,21 @@ namespace Frends.Radon
         [DefaultValue("true")]
         public bool UseWindowsCredentials { get; set; }
 
-        [ConditionalDisplay(nameof(UseWindowsCredentials), "false")]
-        [DefaultDisplayType(DisplayType.Text)]
+        [UIHint(nameof(UseWindowsCredentials), "", false)]
+        [DisplayFormat(DataFormatString = "Text")]
         [DefaultValue("")]
         public string Username { get; set; }
 
         [PasswordPropertyText]
-        [DefaultDisplayType(DisplayType.Text)]
-        [ConditionalDisplay(nameof(UseWindowsCredentials), "false")]
+        [DisplayFormat(DataFormatString = "Text")]
+        [UIHint(nameof(UseWindowsCredentials), "", false)]
         [DefaultValue("")]
         public string Password { get; set; }
 
         [DefaultValue(1000)]
         public int MaxIdleTime { get; set; }
 
-        [DefaultDisplayType(DisplayType.Text)]
+        [DisplayFormat(DataFormatString = "Text")]
         [DefaultValue("")]
         public string TemplateFile { get; set; }
     }
